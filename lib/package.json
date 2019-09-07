@@ -12,12 +12,11 @@
   "author": "Sercan YILDIZ <ysercanz@gmail.com> (https://twitter.com/e34Maby88)",
   "license": "ISC",
   "dependencies": {
-    "execa": "^2.0.4",
     "lighthouse": "^5.2.0",
     "listr": "^0.14.3"
   },
   "bin": {
-    "lth": "./bin/lth.sh"
+    "auditor": "./bin/auditor.sh"
   },
   "devDependencies": {}
 }
