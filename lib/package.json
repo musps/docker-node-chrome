@@ -1,0 +1,23 @@
+{
+  "name": "xxxxx",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 255;",
+    "start": "node ./src/index.js",
+    "cli": "node ./src/index-cli.js"
+  },
+  "keywords": [],
+  "author": "Sercan YILDIZ <ysercanz@gmail.com> (https://twitter.com/e34Maby88)",
+  "license": "ISC",
+  "dependencies": {
+    "execa": "^2.0.4",
+    "lighthouse": "^5.2.0",
+    "listr": "^0.14.3"
+  },
+  "bin": {
+    "lth": "./bin/lth.sh"
+  },
+  "devDependencies": {}
+}
