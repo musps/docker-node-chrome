@@ -1,6 +1,6 @@
 FROM node:10-slim
 
-LABEL "com.github.actions.name"="Lighthouse Audit"
+LABEL "com.github.actions.name"="Auditor"
 LABEL "com.github.actions.description"="Run tests on a webpage via Google's Lighthouse tool"
 LABEL "com.github.actions.icon"="check-square"
 LABEL "com.github.actions.color"="yellow"
@@ -20,9 +20,9 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 ENV CI=true
 
 ADD entrypoint.sh /app/entrypoint.sh
-ADD lib /app/lib
-RUN npm link /app/lib
+ADD lib /app/auditor
 
+RUN npm link /app/auditor
 RUN chmod +x /app/entrypoint.sh
 
 ENTRYPOINT ["/app/entrypoint.sh"]

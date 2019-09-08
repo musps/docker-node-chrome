@@ -2,6 +2,6 @@
 
 set -e
 
-lth
+auditor
 
 exit 0

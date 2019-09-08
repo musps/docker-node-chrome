@@ -1,11 +1,11 @@
 version: '3.7'
 
 services:
-  action_lighthouse:
-    container_name: action_lighthouse
+  auditor:
+    container_name: auditor
     build:
       context: .
       dockerfile: Dockerfile
     working_dir: /github/workspace
     volumes:
-      - ./example:/github/workspace
+      - ./examples/example-1:/github/workspace
