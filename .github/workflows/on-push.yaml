@@ -1,0 +1,26 @@
+name: On release prod
+
+on:
+  release:
+    tags:
+      - v*.*.*-prod
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Only run if release is published (should not be triggered).
+        if: (!(github.event_name == 'release' && github.event.action == 'published'))
+        run: exit 255;
+      - name: Checkout release tag
+        uses: actions/checkout@v1
+        with:
+          ref: ${{ github.ref }}
+      - name: Check current branch
+        run: git status
+      - name: Make file executable
+        run: chmod +x ./builder.sh
+      - name: Build image
+        run: ./builder.sh
+        env:
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

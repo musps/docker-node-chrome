@@ -1,7 +1,7 @@
 #!/bin/sh
 
 USER=gnatty
-PKG="auditor"
+PKG="node-chrome"
 
 if [[ -n "$2" ]]; then
   VERSION="$2"
