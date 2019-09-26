@@ -1,9 +1,7 @@
 name: On release prod
 
 on:
-  release:
-    tags:
-      - v*.*.*-prod
+  push
 
 jobs:
   deploy:
